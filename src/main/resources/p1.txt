@@ -1,0 +1,7 @@
+func maxi {a,b,c}->{maxi}:
+	if a>=b & a>=c:
+		maxi=a
+	orif b>=a & b>=c:
+		maxi=b
+	or:
+		maxi=c
