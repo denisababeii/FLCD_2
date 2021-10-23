@@ -1,0 +1,9 @@
+func isPrime {a}->{result}:
+	if a<=1:
+		result=False
+		exit
+	for i from 2 to a:
+		if a%i<->0:
+			result=False
+			exit
+	result=True

@@ -1,0 +1,4 @@
+func sum {a[],n}->{sum}:
+	sum=0
+	for i from 0 to n:
+		sum=sum+a[i]

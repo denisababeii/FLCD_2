@@ -1,7 +1,7 @@
 func maxi {a,b,c}->{maxi}:
-	if a>=b and a>=c:
+	if a>=b & a>=c:
 		maxi=a
 	orif b>=a and b>=c:
-		maxi=b
+		maxi=0b
 	or:
-		maxi=c
+	    maxi=c
