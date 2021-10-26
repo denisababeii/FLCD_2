@@ -68,7 +68,7 @@ public class Scanner {
             return true;
         if(token.matches("^\"[a-zA-Z0-9_]*\"$")) // String
             return true;
-        if(token.matches( "^[a-zA-Z]+\\[[0-9a-zA-Z,]*[0-9a-zA-Z]*]$")) // Array
+        if(token.matches( "^[a-zA-Z]\\[[A-Za-z]*]$")) // Array
             return true;
         if(token.matches("'[A-Za-z0-9_]'")) // Character
             return true;
