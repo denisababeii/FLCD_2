@@ -46,7 +46,7 @@ public class Scanner {
     }
 
     private boolean isOperator(String token) {
-        if (token.matches("<|>|<=|>=|=|<->|\\+|-|//|\\*|%|!=|}|->|\\{"))
+        if (token.matches("<|>|<=|>=|=|<->|\\+|-|//|\\*|%|<>|}|->|\\{"))
             return true;
         return false;
     }
