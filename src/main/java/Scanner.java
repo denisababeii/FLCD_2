@@ -58,7 +58,7 @@ public class Scanner {
     }
 
     private boolean isIdentifier(String token) {
-        if(token.matches("^[A-Za-z][a-zA-Z0-9_]+$"))
+        if(token.matches("^[A-Za-z][a-zA-Z0-9_]*$"))
             return true;
         return false;
     }
@@ -66,9 +66,11 @@ public class Scanner {
     private boolean isConstant(String token) {
         if(token.matches("^-?\\d+\\.?\\d*$"))  // Looks for decimal numbers, with optional hyphen minus and optional full stop plus zero or more decimal numbers following.
             return true;
-        if(token.matches("^[A-Za-z][a-zA-Z0-9_]*$"))
+        if(token.matches("^\"[a-zA-Z0-9_]*\"$")) // String
             return true;
-        if(token.matches( "^[a-zA-Z]+\\[[0-9a-zA-Z,]*[0-9a-zA-Z]*]$"))
+        if(token.matches( "^[a-zA-Z]+\\[[0-9a-zA-Z,]*[0-9a-zA-Z]*]$")) // Array
+            return true;
+        if(token.matches("'[A-Za-z0-9_]'")) // Character
             return true;
         return false;
     }

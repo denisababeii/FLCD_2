@@ -2,6 +2,8 @@ func maxi {a,b,c}->{maxi}:
 	if a>=b & a>=c:
 		maxi=a
 	orif b>=a and b>=c:
-		maxi=0b
+		maxi='aa'
 	or:
 	    maxi=c
+	maxi='a'
+	maxi="5"
