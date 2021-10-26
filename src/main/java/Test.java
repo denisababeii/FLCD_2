@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -10,10 +11,15 @@ public class Test {
         var pif = new ArrayList<Pair<String, Integer>>();
         Scanner tokenizer = new Scanner(table, pif);
         try {
-            tokenizer.execute("src/main/resources/p1.txt", "src/main/resources/PIF.out", "src/main/resources/ST.out");
-            tokenizer.execute("src/main/resources/p2.txt", "src/main/resources/PIF.out", "src/main/resources/ST.out");
-            tokenizer.execute("src/main/resources/p3.txt", "src/main/resources/PIF.out", "src/main/resources/ST.out");
-            tokenizer.execute("src/main/resources/p1err.txt", "src/main/resources/PIF.out", "src/main/resources/ST.out");
+            var pifFile = new FileWriter("src/main/resources/PIF.out");
+            var stFile = new FileWriter("src/main/resources/ST.out");
+            stFile.append(table.toString());
+            stFile.append("\nThe Symbol Table is built on a HashTable with Linked Lists of HashNodes. Each HashNode contains the token and its hash code.");
+            stFile.flush();
+            tokenizer.execute("src/main/resources/p1.txt", pifFile);
+            tokenizer.execute("src/main/resources/p2.txt", pifFile);
+            tokenizer.execute("src/main/resources/p3.txt", pifFile);
+            tokenizer.execute("src/main/resources/p1err.txt", pifFile);
         }
         catch (IOException e) {
             e.printStackTrace();

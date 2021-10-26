@@ -11,9 +11,9 @@ public class Scanner {
         this.pif = pif;
     }
 
-    public void execute (String input, String pifOutput, String stOutput) throws IOException {
+    public void execute (String input, FileWriter pifFile) throws IOException {
         var tokens = tokenize(input);
-        addToPIF(tokens, pifOutput, stOutput);
+        addToPIF(tokens, input, pifFile);
     }
 
     private ArrayList<Pair<String,Integer>> tokenize(String filename) {
@@ -75,7 +75,7 @@ public class Scanner {
         return false;
     }
 
-    private void addToPIF(ArrayList<Pair<String,Integer>> tokens, String pifOutput, String stOutput) throws IOException {
+    private void addToPIF(ArrayList<Pair<String,Integer>> tokens, String input, FileWriter pifFile) throws IOException {
         for (var item :
                 tokens) {
             var token = item.getFirst();
@@ -89,17 +89,13 @@ public class Scanner {
                 System.out.println("Lexical error at line "+item.getSecond()+", token "+item.getFirst());
             }
         }
-        var pifFile = new FileWriter(pifOutput);
-        pifFile.write("");
+
+        pifFile.append("********"+input+"********\n");
         for (var item :
                 pif) {
             pifFile.append(item.toString()+"\n");
         }
         pifFile.flush();
 
-        var stFile = new FileWriter(stOutput);
-        stFile.write("");
-        stFile.append(symbolTable.toString());
-        stFile.flush();
     }
 }

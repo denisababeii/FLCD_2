@@ -1,1 +1,2 @@
-SymbolTable@776ec8df
+SymbolTable@24d46ca6
+The Symbol Table is built on a HashTable with Linked Lists of HashNodes. Each HashNode contains the token and its hash code.

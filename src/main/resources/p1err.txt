@@ -6,4 +6,15 @@ func maxi {a,b,c}->{maxi}:
 	or:
 	    maxi=c
 	maxi='a'
+    maxi=''
+    maxi='_'
+    maxi='5'
 	maxi="5"
+	maxi=""
+    maxi="aaaa"
+    maxi="a3_"
+    maxi="_"
+	maxi=-5
+	maxi=5
+	maxi=0.5
+	maxi=-0.5
